@@ -1,5 +1,5 @@
 {% set name = "azure-cli-core" %}
-{% set version = "2.0.58" %}
+{% set version = "2.0.59" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bbd53826c77f08d8077fe1e335b55d747c95392248e518cb7179115bc6717e78
+  sha256: e0c84f5ef4ae974b9f39953f1e32dcc9207389a4e638dc6f4df4f42f407ca2b4
 
 build:
   noarch: python
