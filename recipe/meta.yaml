@@ -57,7 +57,6 @@ about:
   license_family: MIT
   license_file: LICENSE
   summary: Microsoft Azure Command-Line Tools Core Module
-
   doc_url: https://docs.microsoft.com/en-us/cli/azure
   dev_url: https://github.com/Azure/azure-cli
 
