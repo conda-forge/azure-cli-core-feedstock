@@ -1,5 +1,5 @@
 {% set name = "azure-cli-core" %}
-{% set version = "2.0.61" %}
+{% set version = "2.17.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15184b916e9ebaab4a630716d980384992f6d6084cf2eff23c704ecaf421adf6
+  sha256: 27cdbff8e535c48788e2bf37113f7ad213182f5c0b32ffa13d5c013d478b8651
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -20,27 +20,24 @@ requirements:
     - pip
   run:
     - python >=3
-    - adal >=1.2.0
-    - antlr-python-runtime
-    - argcomplete >=1.8.0
-    - azure-cli-telemetry
-    - azure-mgmt-resource ==2.1.0
-    - colorama >=0.3.9
-    - humanfriendly >=4.7
-    - jmespath
-    - knack ==0.5.1
-    - msrest >=0.4.4
-    - msrestazure >=0.4.25
-    - paramiko >=2.0.8
-    - pip
-    - pygments
-    - pyjwt
-    - pyopenssl >=17.1.0
-    - pyyaml
-    - requests >=2.20.0
-    - six
-    - tabulate >=0.7.7,<=0.8.2
     - wheel
+    - adal  ~=1.2.7
+    - argcomplete  ~=1.8
+    - azure-cli-telemetry  ==1.0.6.*
+    - azure-common  ~=1.1
+    - azure-mgmt-core  >=1.2.0,<1.3.0     # the preview version of azure-mgmt-core is 1.3.0b1 it cannot fit azure-core >=1.14.0
+    - cryptography  >=3.2,<3.4
+    - humanfriendly  >=4.7,<10.0
+    - jmespath
+    - knack  ~=0.8.2
+    - msal  >=1.10.0,<2.0.0
+    - paramiko  >=2.0.8,<3.0.0
+    - pkginfo  >=1.5.0.1
+    - PyJWT  >=2.1.0
+    - pyopenssl  >=17.1.0  # https://github.com/pyca/pyopenssl/pull/612
+    - requests  ~=2.25.1
+    - six  ~=1.12
+    - urllib3  >=1.26.5
 
 test:
   imports:
