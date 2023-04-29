@@ -10,13 +10,13 @@ source:
   sha256: 28c80e5a449d8e73d16dbe96196d6277d564a8225842c5e7f84fcc53ee4f4f39
 
 build:
-  skip: true  # [win]
+  skip: true  # [win or py<37]
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
   run:
     - python >=3.7
