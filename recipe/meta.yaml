@@ -10,13 +10,13 @@ source:
   sha256: 28c80e5a449d8e73d16dbe96196d6277d564a8225842c5e7f84fcc53ee4f4f39
 
 build:
-  skip: true  # [win or py<37]
+  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
     - python
@@ -24,7 +24,7 @@ requirements:
     - azure-cli-telemetry =1.0.8
     - azure-mgmt-core >=1.2.0,<2
     - cryptography
-    - distro  # [linux]
+    - distro
     - humanfriendly ~=10.0
     - jmespath
     - knack ~=0.10.1
@@ -36,10 +36,10 @@ requirements:
     - pkginfo >=1.6
     - psutil ~=5.9
     - pyjwt >=2.1.0
-    - pymsalruntime >=0.13.2,<0.14  # [win]
+    # - pymsalruntime >=0.13.2,<0.14  # [win]
     - pysocks >=1.6.0
     - pyopenssl >=17.1.0
-    - requests >=0.13.2,<0.14
+    - requests
 
 test:
   imports:
