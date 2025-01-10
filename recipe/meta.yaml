@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: a19f345edc4f1a7bad0a1cfc3e6a7393adcc916ab489b48341792d7b78aa4cc2
 
 build:
@@ -16,10 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - adal >=1.2.0
     - antlr-python-runtime
     - argcomplete >=1.8.0
@@ -28,7 +29,7 @@ requirements:
     - colorama >=0.3.9
     - humanfriendly >=4.7
     - jmespath
-    - knack ==0.5.1
+    - knack >=0.5.3
     - msrest >=0.4.4
     - msrestazure >=0.4.25
     - paramiko >=2.0.8
@@ -43,6 +44,8 @@ requirements:
     - wheel
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - azure
     - azure.cli
