@@ -1,5 +1,5 @@
 {% set name = "azure-cli-core" %}
-{% set version = "2.67.0" %}
+{% set version = "2.68.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: a19f345edc4f1a7bad0a1cfc3e6a7393adcc916ab489b48341792d7b78aa4cc2
+  sha256: 05433cdfc71198b85514cc69440bdaacd82a7457daa4ec1f1daa8761ba7ff5ec
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - argcomplete >=3.3.0
+    - argcomplete >=3.5.2
     - azure-cli-telemetry >=1.1.0
     - azure-mgmt-core >=1.2.0,<2
     - cryptography
@@ -29,13 +29,13 @@ requirements:
     - humanfriendly >=10.0
     - jmespath
     - knack >=0.11.0
-    # - microsoft-security-utilities-secret-masker >=1.0.0b2
+    # - microsoft-security-utilities-secret-masker ~=1.0.0b2
     - msal_extensions >=1.2.0
-    - msal >=1.31.0
-    # - pymsalruntime >=0.17.0
+    - msal >=1.31.1
     - msrestazure ~=0.6.4
     - packaging >=20.9
     - pkginfo >=1.5.0.1
+    - psutil >=5.9
     - pyjwt >=2.1.0
     - pyopenssl >=17.1.0
     - requests >=2.20.0
