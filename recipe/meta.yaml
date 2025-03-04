@@ -1,5 +1,5 @@
 {% set name = "azure-cli-core" %}
-{% set version = "2.68.0" %}
+{% set version = "2.70.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 05433cdfc71198b85514cc69440bdaacd82a7457daa4ec1f1daa8761ba7ff5ec
+  sha256: a511439f6dd32092eb4bc1d99debdacff87981325b7c3afb2e0534ce6ca071bd
 
 build:
   noarch: python
@@ -20,25 +20,27 @@ requirements:
     - pip
     - setuptools
   run:
+    - microsoft-security-utilities-secret-masker >=1.0.0b2,<1.1.dev0
+    - py-deviceid
     - python >={{ python_min }}
-    - argcomplete >=3.5.2
-    - azure-cli-telemetry >=1.1.0
+    - argcomplete >=3.5.2,<3.6.dev0
+    - azure-cli-telemetry ==1.1.0.*
     - azure-mgmt-core >=1.2.0,<2
     - cryptography
     - distro
-    - humanfriendly >=10.0
+    - humanfriendly >=10.0,<11.dev0
     - jmespath
-    - knack >=0.11.0
+    - knack >=0.11.0,<0.12.dev0
     # - microsoft-security-utilities-secret-masker ~=1.0.0b2
-    - msal_extensions >=1.2.0
-    - msal >=1.31.1
-    - msrestazure ~=0.6.4
+    - msal_extensions ==1.2.0
+    - msal ==1.31.2b1
+    - msrestazure >=0.6.4,<0.7.dev0
     - packaging >=20.9
     - pkginfo >=1.5.0.1
     - psutil >=5.9
     - pyjwt >=2.1.0
     - pyopenssl >=17.1.0
-    - requests >=2.20.0
+    - requests
     - pysocks >=1.6.0
 
 test:
