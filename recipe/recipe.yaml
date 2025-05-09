@@ -1,26 +1,29 @@
-{% set name = "azure-cli-core" %}
-{% set version = "2.68.0" %}
+schema_version: 1
+
+context:
+  name: azure-cli-core
+  version: 2.68.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
   sha256: 05433cdfc71198b85514cc69440bdaacd82a7457daa4ec1f1daa8761ba7ff5ec
 
 build:
+  number: 1
   noarch: python
-  number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - setuptools
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - argcomplete >=3.5.2
     - azure-cli-telemetry >=1.1.0
     - azure-mgmt-core >=1.2.0,<2
@@ -41,26 +44,23 @@ requirements:
     - requests >=2.20.0
     - pysocks >=1.6.0
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - azure
-    - azure.cli
-    - azure.cli.core
-    - azure.cli.core.commands
-    - azure.cli.core.extension
-    - azure.cli.core.profiles
-
+tests:
+  - python:
+      imports:
+        - azure
+        - azure.cli
+        - azure.cli.core
+        - azure.cli.core.commands
+        - azure.cli.core.extension
+        - azure.cli.core.profiles
+      python_version: ${{ python_min }}.*
 about:
-  home: https://github.com/Azure/azure-cli
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: Microsoft Azure Command-Line Tools Core Module
-
-  doc_url: https://docs.microsoft.com/en-us/cli/azure
-  dev_url: https://github.com/Azure/azure-cli
+  homepage: https://github.com/Azure/azure-cli
+  repository: https://github.com/Azure/azure-cli
+  documentation: https://docs.microsoft.com/en-us/cli/azure
 
 extra:
   recipe-maintainers:
