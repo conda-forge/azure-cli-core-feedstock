@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-cli-core
-  version: 2.68.0
+  version: "2.72.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 05433cdfc71198b85514cc69440bdaacd82a7457daa4ec1f1daa8761ba7ff5ec
+  sha256: d1ab0f9e7315f5e26e443bed79f2efe9a45dbe967a57dfd9a8c8538649952a33
 
 build:
   number: 1
