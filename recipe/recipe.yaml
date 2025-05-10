@@ -32,7 +32,7 @@ requirements:
     - humanfriendly >=10.0
     - jmespath
     - knack >=0.11.0,<0.11.1
-    - microsoft-security-utilities-secret-masker ~=1.0.0b2
+    - microsoft-security-utilities-secret-masker >=1.0.0b2,<1.1.0
     - msal ==1.31.1
     - msal_extensions ==1.2.0
     - msrestazure ~=0.6.4
