@@ -149,4 +149,5 @@ Feedstock Maintainers
 
 * [@andreyz4k](https://github.com/andreyz4k/)
 * [@dhirschfeld](https://github.com/dhirschfeld/)
+* [@janjagusch](https://github.com/janjagusch/)
 
