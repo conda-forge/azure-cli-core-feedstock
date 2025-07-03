@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-cli-core
-  version: "2.74.0"
+  version: "2.75.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 13acb127f8b9c4733e4742d0f77cc5687ebdad651a4ea3f90afce8dbae98dfea
+  sha256: 0187f93949c806f8e39617cdb3b4fd4e3cac5ebe45f02dc0763850bcf7de8df2
 
 build:
   number: 0
@@ -32,10 +32,9 @@ requirements:
     - humanfriendly >=10.0
     - jmespath
     - knack >=0.11.0,<0.11.1
-    - microsoft-security-utilities-secret-masker >=1.0.0b2,<1.1.0
-    - msal ==1.32.3
+    - microsoft-security-utilities-secret-masker >=1.0.0b4,<1.1.0
+    - msal ==1.33.0b1
     - msal_extensions ==1.2.0
-    - msrestazure ~=0.6.4
     - packaging >=20.9
     - pkginfo >=1.5.0.1
     - psutil >=5.9
