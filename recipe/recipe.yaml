@@ -24,16 +24,16 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - argcomplete >=3.5.2,<3.5.3
+    - argcomplete >=3.5.2,<3.6
     - azure-cli-telemetry >=1.1.0
     - azure-mgmt-core >=1.2.0,<2
     - cryptography
     - distro
     - humanfriendly >=10.0
     - jmespath
-    - knack >=0.11.0,<0.11.1
+    - knack >=0.11.0,<0.12
     - microsoft-security-utilities-secret-masker >=1.0.0b4,<1.1.0
-    - msal ==1.33.0b1
+    - msal ==1.34.0b1
     - msal_extensions ==1.2.0
     - packaging >=20.9
     - pkginfo >=1.5.0.1
