@@ -54,7 +54,11 @@ tests:
         - azure.cli.core.commands
         - azure.cli.core.extension
         - azure.cli.core.profiles
-      python_version: ${{ python_min }}.*
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
 about:
   license: MIT
   license_file: LICENSE
